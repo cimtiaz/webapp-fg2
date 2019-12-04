@@ -18,8 +18,9 @@ public class User {
     @NotEmpty(message = "Please provide an email address")
     @Column(name = "email", unique = true)
     private String email;
+    @Column(name = "phone")
     private String phone;
-
+    @Column(name = "address")
     private String address;
     @Length(min = 5, max=100, message = "Password length most be between 5-100 characters")
     @Column(name = "password")

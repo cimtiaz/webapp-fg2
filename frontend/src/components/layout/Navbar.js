@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 function Navbar({onLogout}) {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark ">
-            <img src="logo60.png" alt="logo" />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -13,6 +12,7 @@ function Navbar({onLogout}) {
             <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav mx-auto">
                 
+
 
                         <li className="nav-item">
                             <Link to="/buyer" className="nav-link">
@@ -24,6 +24,11 @@ function Navbar({onLogout}) {
                         <li className="nav-item">
                             <Link to="/about" className="nav-link">
                                 About 
+                            </Link>
+
+                        <li className="nav-item">
+                            <Link to="/seller" className="nav-link">
+                                Seller
                             </Link>
                         </li>
                 </ul>
