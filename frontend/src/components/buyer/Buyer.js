@@ -1,6 +1,9 @@
 
 
  import React, {useState} from "react";
+ import {Link} from 'react-router-dom'; 
+ //import Confirmation from './components/confirmation/Confirmation';
+
  function BuyerForm({onSubmit}) {
      const [productName, setProductName] = useState("");
      const [description, setDescription] = useState("");
@@ -9,7 +12,7 @@
      return (
          <div className="card">
              <div className="card-body">
-                 <h4 className="card-title">Details</h4>
+                 <h4 className="card-title">Product</h4>
                  <div>
                      <div className="form-group">
                          <input
@@ -29,11 +32,13 @@
                      </div>
             
                      <div className="form-group">
-                         <button
-                             className="btn btn-primary"
-                             onClick={e => onSubmit({productName, description, price, duration})}>
-                             Approve
-                         </button>
+                       
+                     <Link to="/confirmation">
+                     <button className="btn btn-primary">
+                        Approve
+                        </button>
+                         </Link>
+                         
                          
 
                          <button
