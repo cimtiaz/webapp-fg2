@@ -12,11 +12,7 @@ function Navbar({onLogout}) {
 
             <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav mx-auto">
-                <li className="nav-item">
-                            <Link to="/transactions" className="nav-link">
-                               List of Transactions
-                            </Link>
-                        </li>
+                
 
                         <li className="nav-item">
                             <Link to="/buyer" className="nav-link">
@@ -24,11 +20,7 @@ function Navbar({onLogout}) {
                             </Link>
                         </li>
                      
-                        <li className="nav-item">
-                            <Link to="/seller" className="nav-link">
-                                Seller
-                            </Link>
-                        </li>
+                       
                         <li className="nav-item">
                             <Link to="/about" className="nav-link">
                                 About 
