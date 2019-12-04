@@ -14,14 +14,29 @@ class Checkbox extends React.Component {
           />
           <span>Seller</span>
         </label>
-                <label>
-                  <Checkbox
-                    checked={this.state.checked}
-                    onChange={this.handleCheckboxChange}
-                  />
-                  <span>Buyer</span>
-                </label>
+       <label>
+        <Checkbox
+        checked={this.state.checked}
+        onChange={this.handleCheckboxChange}
+         />
+         <span>Buyer</span>
+         </label>
+         <label>
+        <Checkbox
+        checked={this.state.checked}
+        onChange={this.handleCheckboxChange}
+         />
+         <span>About</span>
+         </label>
+         <label>
+        <Checkbox
+        checked={this.state.checked}
+        onChange={this.handleCheckboxChange}
+         />
+         <span>Profile</span>
+         </label>       
       </div>
+      
     )
   }
 }
