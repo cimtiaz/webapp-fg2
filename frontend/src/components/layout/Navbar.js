@@ -23,6 +23,7 @@ function Navbar({onLogout}) {
                                 Buyer
                             </Link>
                         </li>
+                     
                         <li className="nav-item">
                             <Link to="/seller" className="nav-link">
                                 Seller
