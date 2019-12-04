@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function Navbar({onLogout}) {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            <img src="logo60.png" alt="logo" />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,15 +16,10 @@ function Navbar({onLogout}) {
                             </Link>
                         </li>
 
-                        <li className="nav-item">
-                            <Link to="/posts" className="nav-link">
-                                Posts
-                            </Link>
-                        </li>
 
                         <li className="nav-item">
-                            <Link to="/chat" className="nav-link">
-                                Chat
+                            <Link to="/seller" className="nav-link">
+                                Seller
                             </Link>
                         </li>
                 </ul>
