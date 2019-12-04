@@ -16,6 +16,7 @@ import LoginPage from "./components/auth/LoginPage";
 import HomePage from './components/home/HomePage';
 import About from "./components/about/About";
 import Buyer from "./components/buyer/Buyer";
+import Confirmation from './components/confirmation/Confirmation';
 
 
 function App() {
@@ -29,12 +30,15 @@ function App() {
     <Switch>
   
     <Route>
+    <Route path="/confirmation" component={Confirmation} />
+    
       <Route path="/about">
         <About/>
       </Route>
       <Route path="/buyer">
         <Buyer/>
       </Route>
+     
     </Route>
     </Switch>
     </div>
