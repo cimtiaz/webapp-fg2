@@ -25,7 +25,7 @@ function Navbar({onLogout}) {
                             <Link to="/about" className="nav-link">
                                 About 
                             </Link>
-
+                        </li>
                         <li className="nav-item">
                             <Link to="/seller" className="nav-link">
                                 Seller
