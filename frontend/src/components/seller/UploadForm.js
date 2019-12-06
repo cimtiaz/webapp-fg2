@@ -4,8 +4,8 @@ class UploadForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: '',
-      imagePreviewUrl: ''
+      file: "",
+      imagePreviewUrl: ""
     };
     this._handleImageChange = this._handleImageChange.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -27,29 +27,36 @@ class UploadForm extends Component {
         file: file,
         imagePreviewUrl: reader.result
       });
-    }
+    };
     if (file) {
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
-
   }
 
   render() {
-    let {imagePreviewUrl} = this.state;
+    let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} />);
+      $imagePreview = <img src={imagePreviewUrl} />;
     }
 
     return (
       <div>
+        <div>
           <input type="file" onChange={this._handleImageChange} />
-          <button type="submit" onClick={this._handleSubmit}>Upload Image</button>
-        {$imagePreview}
+          <button
+            className="btn btn-success"
+            id="uploadbtn"
+            type="submit"
+            onClick={this._handleSubmit}
+          >
+            Upload Image
+          </button>
+          {$imagePreview}
+        </div>
       </div>
-    )
+    );
   }
-
 }
 
 export default UploadForm;
