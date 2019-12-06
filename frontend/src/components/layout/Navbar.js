@@ -43,7 +43,6 @@ function Navbar({ onLogout }) {
             </Link>
           </li>
         </ul>
-
         <button className="btn btn-success my-2 my-sm-0" onClick={onLogout}>
           Logout
         </button>
