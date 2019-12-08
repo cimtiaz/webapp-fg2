@@ -1,7 +1,29 @@
 import React from "react";
 
 class Transactions extends React.Component {
-  state = {};
+  state = {
+        transactionList : [{
+                                 id: 1,
+                                 firstname: 'Robin',
+                                 lastname: 'Wieruch',
+                                 amount: 1988,
+                                 date: '10/12/2018',
+                               },
+                               {
+                                 id: 2,
+                                 firstname: 'Dave',
+                                 lastname: 'Davidds',
+                                 amount: 1990,
+                                 date: '10/12/2018',
+                               },
+                                 {
+                                  id: 23,
+                                  firstname: 'Dsdaave',
+                                  lastname: 'Ddsaavidds',
+                                  amount: 1994,
+                                  date: '10/12/2018',
+                               },]};
+
   render() {
     return (
       <table class="table table-hover">
@@ -15,28 +37,16 @@ class Transactions extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>First name</td>
-            <td>Last name</td>
-            <td>Amount</td>
-            <td>YY/MM/DD</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>YY/MM/DD</td>
-          </tr>
-          <tr>
-            <th scope="row">#3</th>
-            <td>Larry</td>
-            <td>Hope</td>
-            <td>Amount</td>
-            <td>YY/MM/DD</td>
-          </tr>
-        </tbody>
+           {this.state.transactionList.map(item => (
+                   <tr>
+                     <td>{item.id}</td>
+                     <td>{item.firstname}</td>
+                     <td>{item.lastname}</td>
+                     <td>{item.amount}</td>
+                     <td>{item.date}</td>
+                   </tr>)
+            )}
+         </tbody>
       </table>
     );
   }
