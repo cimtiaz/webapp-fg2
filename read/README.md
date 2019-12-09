@@ -1,4 +1,4 @@
-# Transparent transaction
+# Transparent Transaction
 _Transparent transaction_ is a web application especially designed for people who want to transact with people online. The application will provide guarantee related services for customers of secondhand market. The application owner will act as a third party controller and will have admin access to the signed document, as well as ability to hold payments from the seller until receiving a confirmation from the buyer. 
 Buyers do not pay for anything until they receive the item and are happy with it. Sellers do not have to send anything until they know the correct funds are being held securely. 
 
