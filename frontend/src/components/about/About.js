@@ -7,7 +7,7 @@ class About extends React.Component {
         <br />
         <br />
         <p>
-          <h4>What is TrustMe?</h4>
+          <h4>What is Transparent Transaction?</h4>
           TrustMe is a service especially designed for having more safety in
           buying things from other people online. While it is easy and
           definitely cheaper to buy used items online, it is not always a
@@ -21,7 +21,7 @@ class About extends React.Component {
           money.
           <br />
           <br />
-          <h4> Why TrustMe? </h4>
+          <h4> Why Transparent Transaction? </h4>
           This transaction is based on trust. We trust in your good nature as an
           honest and responsible individual who will use the 2 days time to
           examine the item and not anything else.
