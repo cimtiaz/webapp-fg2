@@ -1,49 +1,47 @@
 import React from "react";
-
 class Transactions extends React.Component {
   state = {
         transactionList : [{
-                                 id: 1,
-                                 firstname: 'Robin',
-                                 lastname: 'Wieruch',
-                                 amount: 1988,
-                                 date: '10/12/2018',
+                                 ID: 1,
+                                 Name: 'Robin',
+
+                                 Description: 'Samsung mobile',
+                                 Status: 'In stock',
                                },
                                {
-                                 id: 2,
-                                 firstname: 'Dave',
-                                 lastname: 'Davidds',
-                                 amount: 1990,
-                                 date: '10/12/2018',
+                                ID: 2,
+                                 Name: 'Dave',
+
+                                 Description: 'Laptop',
+                                 Status: 'Delivered',
                                },
                                  {
-                                  id: 23,
-                                  firstname: 'Dsdaave',
-                                  lastname: 'Ddsaavidds',
-                                  amount: 1994,
-                                  date: '10/12/2018',
-                               },]};
+                                  ID: 3,
+                                  Name: 'Dsdaave',
 
+                                  Description:'A pair of high heel shoes' ,
+                                  Status: 'Delivered',
+                               },]};
   render() {
     return (
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Date</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
            {this.state.transactionList.map(item => (
                    <tr>
-                     <td>{item.id}</td>
-                     <td>{item.firstname}</td>
-                     <td>{item.lastname}</td>
-                     <td>{item.amount}</td>
-                     <td>{item.date}</td>
+                     <td>{item.ID}</td>
+                     <td>{item.Name}</td>
+
+                     <td>{item.Description}</td>
+                     <td>{item.Status}</td>
                    </tr>)
             )}
          </tbody>
@@ -51,5 +49,4 @@ class Transactions extends React.Component {
     );
   }
 }
-
 export default Transactions;

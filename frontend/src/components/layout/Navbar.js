@@ -5,8 +5,8 @@ import ReactDOM from "react-dom";
 function Navbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-warning">
-      <a class="navbar-brand" href="/About">
-        TaB
+      <a className="navbar-brand" href="/About">
+        TT
       </a>
       <button
         className="navbar-toggler"
@@ -28,13 +28,13 @@ function Navbar({ onLogout }) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/buyer" className="nav-link">
-              Buyer
+            <Link to="/seller" className="nav-link">
+              Seller
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/seller" className="nav-link">
-              Seller
+            <Link to="/buyer" className="nav-link">
+              Buyer
             </Link>
           </li>
           <li className="nav-item">
