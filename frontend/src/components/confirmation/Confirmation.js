@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 
   //alert("Welcomeeeee");
-   let r = window.confirm("Are you sure?");
+   let r = window.confirm("Are you sure!");
    let txt="";
     if (r == true) {
        txt= "You pressed OK!";
@@ -55,9 +55,8 @@ import { Link } from "react-router-dom";
 
                   <div className="form-group">
                          <button onClick={onss}
-                            className="btn btn-success float-left"
-                          >
-                            Approve
+                            className="btn btn-success float-left">
+                            Payment
                          </button>
 
                   </div>
