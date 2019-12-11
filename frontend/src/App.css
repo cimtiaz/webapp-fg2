@@ -1,13 +1,12 @@
 body {
   min-height: 100vh;
   background-color: white;
-  background-image: url("/home/images/0 TT empty bg.png");
+  background-image: url("/home/images/");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
 .App {
   text-align: center;
 }
@@ -104,7 +103,7 @@ body,
 }
 
 $blue_theme: #70a1ff;
-//Root Container
+/*Root Container*/
 .root-container {
   width: 100%;
   height: 100%;
@@ -137,7 +136,7 @@ $blue_theme: #70a1ff;
   cursor: pointer;
 }
 
-//Currently Selected Controller
+/*Currently Selected Controller*/
 .selected-controller {
   transition: border 0.5s ease-out;
   border-bottom: 2px solid $blue_theme;
@@ -161,7 +160,7 @@ $blue_theme: #70a1ff;
   visibility: visible;
 }
 
-//Header
+/* Header*/
 .header {
   text-align: center;
   padding: 5px;
@@ -186,7 +185,7 @@ $blue_theme: #70a1ff;
   margin-bottom: 5px;
 }
 
-//Label
+Label
 .login-label {
   font-family: Oxygen, sans-serif;
   font-size: 20px;
@@ -194,7 +193,7 @@ $blue_theme: #70a1ff;
   padding-left: 5px;
 }
 
-//Input
+/*Input*/
 .login-input {
   height: 2.1em;
   border-radius: 3px;
@@ -216,10 +215,11 @@ $blue_theme: #70a1ff;
   box-shadow: 0px 0px 20px rgba(15, 15, 15, 0.2);
 }
 
-//Input Placeholder
+/*Input Placeholder*/
 .login-input::placeholder {
   font-family: Oxygen, sans-serif;
-  font-size: 16px; //color: rgba(46, 213, 116, 0.839);
+  font-size: 16px;
+  color: rgba(46, 213, 116, 0.839);
   color: rgba(15, 15, 15, 0.4);
 }
 
@@ -248,7 +248,7 @@ $blue_theme: #70a1ff;
   font-size: 16px;
 }
 
-//Password
+Password
 .password-state {
   display: flex;
   flex-direction: row;
@@ -277,11 +277,25 @@ $blue_theme: #70a1ff;
   visibility: visible;
 }
 .logo {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 300px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  /*float: none;
+  padding: 22.5px 0px 0px 0px;
+  text-align:center;
+  align-content: center;
+  position: relative;*/
 }
+
+
+
 .btn {
-  border-radius: 8px;
+  border-radius: 7px;
 }
 #uploadbtn {
   margin-left: 450px;
@@ -306,3 +320,4 @@ $blue_theme: #70a1ff;
   width: 50rem;
   text-align: justify;
 }
+
