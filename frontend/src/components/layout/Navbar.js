@@ -20,14 +20,14 @@ function Navbar({ onLogout }) {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="navbarColor01">
+      <div className="collapse navbar-collapse navbar-padding">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item">
             <Link to="/about" className="nav-link">
               About
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item nav-list">
             <Link to="/seller" className="nav-link">
               Seller
             </Link>
