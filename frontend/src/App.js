@@ -7,7 +7,7 @@ import Auth from "./services/Auth";
 import Navbar from "./components/layout/Navbar";
 // Import pages
 import LoginPage from "./components/auth/LoginPage";
-import HomePage gitfrom "./components/home/HomePage";
+import HomePage from "./components/home/HomePage";
 import About from "./components/about/About";
 import Buyer from "./components/buyer/Buyer";
 import Confirmation from "./components/confirmation/Confirmation";
