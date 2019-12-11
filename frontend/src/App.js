@@ -7,14 +7,13 @@ import Auth from "./services/Auth";
 import Navbar from "./components/layout/Navbar";
 // Import pages
 import LoginPage from "./components/auth/LoginPage";
-import HomePage from "./components/home/HomePage";
+import HomePage gitfrom "./components/home/HomePage";
 import About from "./components/about/About";
 import Buyer from "./components/buyer/Buyer";
 import Confirmation from "./components/confirmation/Confirmation";
 import SellerPage from "./components/seller/SellerPage";
 import UploadForm from "./components/seller/UploadForm";
 import Transaction from "./components/transactions/ListOfTransactions";
-
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
   Auth.bindLoggedInStateSetter(setLoggedIn);
@@ -24,7 +23,6 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path="/confirmation" component={Confirmation} />
-
           <Route path="/about">
             <About />
           </Route>
@@ -40,6 +38,10 @@ function App() {
 
           <Route path="/transactions">
             <Transaction />
+          </Route>
+
+          <Route path="/">
+            <HomePage />
           </Route>
         </Switch>
       </div>
