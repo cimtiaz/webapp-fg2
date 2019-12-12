@@ -22,7 +22,7 @@ class LoginPage extends Component {
         <div className="container">
           <div className="row mt-4">
             <div className="col-lg-12 ">
-              <img src="logo.png" alt="logo" className="logo" />
+              <img src="TT-Logo.png" alt="logo" className="logo" />
               <p className="big-p">
                 Transact with Peace of Mind Trustap is a secure transaction
                 platform that completely protects you from being scammed when

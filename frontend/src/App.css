@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   background-color: white;
-  background-image: url("/home/images/");
+  background-image: url("/Users/kanchanmahajan/IdeaProjects/webapp-fg2/frontend/public/home/images/TT-Logo.svg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -10,7 +10,6 @@ body {
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
 }
@@ -248,7 +247,6 @@ Label
   font-size: 16px;
 }
 
-Password
 .password-state {
   display: flex;
   flex-direction: row;
@@ -277,22 +275,15 @@ Password
   visibility: visible;
 }
 .logo {
-  height: 100px;
-  width: 300px;
+  height: auto;
+  width: 200px;
 
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 
-  /*float: none;
-  padding: 22.5px 0px 0px 0px;
-  text-align:center;
-  align-content: center;
-  position: relative;*/
 }
-
-
 
 .btn {
   border-radius: 7px;
@@ -320,4 +311,5 @@ Password
   width: 50rem;
   text-align: justify;
 }
+
 
