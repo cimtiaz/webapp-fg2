@@ -33,7 +33,7 @@ function Navbar({ onLogout }) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/seller" className="nav-link">
+            <Link to="/product" className="nav-link">
               Seller
             </Link>
           </li>

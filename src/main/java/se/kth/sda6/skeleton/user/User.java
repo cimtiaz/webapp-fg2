@@ -8,6 +8,7 @@ import se.kth.sda6.skeleton.transaction.Transaction;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -39,12 +40,17 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @OneToOne(mappedBy="user")
-    private AccountInfo accountInformation;
-
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="userId")
     private Set<Transaction> transactions;
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
 
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="userId")
@@ -64,9 +70,7 @@ public class User {
         this.name = name;
         this.address = address;
         this.phone = phone;
-
     }
-
 
     public Long getUserId() {
         return userId;
@@ -115,4 +119,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
 }
