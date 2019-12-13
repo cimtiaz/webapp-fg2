@@ -1,10 +1,5 @@
 gradle
 .gradle
-gradlew
-gradlew.bat
-frontend/package-lock.json
-frontend/package.json
-
 /build
 
 .idea
