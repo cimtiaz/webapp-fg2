@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SellerForm({ onSubmit }) {
+function ProductForm({ onSubmit }) {
   const [productName, setProductName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -57,7 +57,7 @@ function SellerForm({ onSubmit }) {
                 onSubmit({ productName, description, price, duration })
               }
             >
-              Generate Contract
+              Start Transaction
             </button>
           </div>
         </div>
@@ -66,4 +66,4 @@ function SellerForm({ onSubmit }) {
   );
 }
 
-export default SellerForm;
+export default ProductForm;

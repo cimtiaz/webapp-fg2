@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 @Service()
 public class UserService {
     @Autowired
-    private UserRepository userRepository;
+    private  UserRepository userRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
 
-    public User findUserByEmail(String email) {
+    public  User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 

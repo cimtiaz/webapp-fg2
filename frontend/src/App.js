@@ -11,8 +11,8 @@ import HomePage from "./components/home/HomePage";
 import About from "./components/about/About";
 import Buyer from "./components/buyer/Buyer";
 import Confirmation from "./components/confirmation/Confirmation";
-import SellerPage from "./components/seller/SellerPage";
-import UploadForm from "./components/seller/UploadForm";
+import ProductPage from "./components/product/ProductPage";
+import UploadForm from "./components/product/UploadForm";
 import Transaction from "./components/transactions/ListOfTransactions";
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
             <Buyer />
           </Route>
 
-          <Route path="/seller">
-            <SellerPage />
+          <Route path="/product">
+            <ProductPage />
             <UploadForm />
           </Route>
 

@@ -15,7 +15,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "transactionkey", updatable = false, nullable = false)
+    @Column(name = "transactionKey", updatable = false, nullable = false)
     private UUID TransactionKey;
 
     //buyer ID which is same as user ID of the buyer
@@ -30,19 +30,16 @@ public class Transaction {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "contract_signed_date")
-    private Date contractSignedDate;
+    @Column(name = "start_date")
+    private Date startDate;
 
-    @Column(name = "contract_signed")
-    private boolean contractSigned;
 
     public Transaction(){
     }
 
-    public Transaction(User user, Product product, boolean contractSigned){
+    public Transaction(User user, Product product, Date endDate){
         this.user = user;
         this.product = product;
-        this.contractSigned = contractSigned;
     }
 
     public UUID getTransactionKey() {
@@ -53,11 +50,27 @@ public class Transaction {
         TransactionKey = transactionKey;
     }
 
-    public Date getContractSignedDate() { return contractSignedDate; }
+    public Date getStartDate() {
+        return startDate;
+    }
 
-    public void setContractSignedDate(Date contractSignedDate) { this.contractSignedDate = contractSignedDate; }
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 
-    public boolean isContractSigned() { return contractSigned; }
+    public User getUser() {
+        return user;
+    }
 
-    public void setContractSigned(boolean contractSigned) { this.contractSigned = contractSigned; }
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

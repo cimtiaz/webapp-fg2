@@ -1,101 +1,94 @@
 package se.kth.sda6.skeleton.product;
 
-
-import org.hibernate.annotations.CreationTimestamp;
-import se.kth.sda6.skeleton.image.Image;
-import se.kth.sda6.skeleton.transaction.Transaction;
 import se.kth.sda6.skeleton.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-@Table(name="productInfo")
+@Table(name="product")
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId")
-    private Long productId;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id")
+        private Long id;
 
-    @ManyToOne
-    private User user;
+        @NotEmpty(message = "Please provide an Product Name")
+        @Column(name = "productName")
+        private String productName;
+        @Column(name = "description")
+        private String description;
+        @Column(name = "price")
+        private String price;
+        @Column(name = "duration")
+        private String duration;
 
-    @NotEmpty(message = "Please provide a product name")
-    @Column(name = "product_Name")
-    private String productName;
+        @ManyToOne
+       // @PrimaryKeyJoinColumn(name="user_id")
+        private User user;
 
-    @NotEmpty(message = "Please provide a product details")
-    @Column(name = "product_Details")
-    private String productDescription;
+        // Hibernate needs a default constructor to function
+        public Product() {}
 
-    @NotEmpty(message = "Please provide a product price")
-    @Column(name = "product_Price")
-    private float productPrice;
+        public Product(@NotEmpty(message = "Please provide an Product Name") String productName, String description,
+                       String price, String duration,User user) {
+            this.productName = productName;
+            this.description = description;
+            this.price = price;
+            this.duration = duration;
+            this.user =user;
+        }
 
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "registered_date")
-    private Date registeredDate;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="productId")
-    private List<Image> images = new ArrayList<Image>();
-
-    @OneToOne(mappedBy="product")
-    private Transaction transaction;
-
-    public Product(){
+    public User getUser() {
+        return user;
     }
 
-    public Product(User user, String productName, float productPrice, String productDescription){
+    public void setUser(User user) {
         this.user = user;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productDescription = productDescription;
     }
 
-    public Long getProductId() {
-        return productId;
-    }
+    public Long getId() {
+            return id;
+        }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public String getProductName() {
-        return productName;
-    }
+        public String getProductName() {
+            return productName;
+        }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+        public void setProductName(String productName) {
+            this.productName = productName;
+        }
 
-    public String getProductDescription() {
-        return productDescription;
-    }
+        public String getDescription() {
+            return description;
+        }
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
+        public void setDescription(String description) {
+            this.description = description;
+        }
 
-    public float getProductPrice() {
-        return productPrice;
-    }
+        public String getPrice() {
+            return price;
+        }
 
-    public void setProductPrice(float productPrice) {
-        this.productPrice = productPrice;
-    }
+         public void setPrice(String price) {
+            this.price = price;
+        }
 
-    public Date getRegisteredDate() {
-        return registeredDate;
-    }
+        public String getDuration() {
+            return duration;
+        }
 
-    public void setRegisteredDate(Date registeredDate) {
-        this.registeredDate = registeredDate;
-    }
+        public void setDuration(String duration) {
+            this.duration = duration;
+        }
+
 }
+
 

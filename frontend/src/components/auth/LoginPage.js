@@ -4,6 +4,7 @@ import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
 
 class LoginPage extends Component {
+
   async login(loginData) {
     const loginSuccess = await Auth.login(loginData);
     if (!loginSuccess) {
