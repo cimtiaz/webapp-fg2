@@ -21,10 +21,15 @@ class SellerPage extends Component {
       this.setState({
         seller: newSellers
       });
+
+
     } catch (e) {
       console.error(e);
     }
   }
+
+
+
 
   render() {
     return (

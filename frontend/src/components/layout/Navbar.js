@@ -6,7 +6,7 @@ function Navbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-warning">
       <a className="navbar-brand" href="/About">
-        TT
+        Welcome to TT
       </a>
       <button
         className="navbar-toggler"

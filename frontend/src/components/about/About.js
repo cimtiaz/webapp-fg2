@@ -8,7 +8,7 @@ class About extends React.Component {
         <br />
         <p>
           <h4>What is Transparent Transaction?</h4>
-          TrustMe is a service especially designed for having more safety in
+          Transparent Transaction is a service especially designed for having more safety in
           buying things from other people online. While it is easy and
           definitely cheaper to buy used items online, it is not always a
           success. One can end up buying an item that is not working properly

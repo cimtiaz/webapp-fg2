@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
-  background-color: white;
-  background-image: url("/Users/kanchanmahajan/IdeaProjects/webapp-fg2/frontend/public/home/images/TT-Logo.svg");
+  background-color:  ;
+  background-image: url("/Users/kanchanmahajan/IdeaProjects/webapp-fg2/frontend/public/home/images/bg.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -102,7 +102,7 @@ body,
 }
 
 $blue_theme: #70a1ff;
-/*Root Container*/
+
 .root-container {
   width: 100%;
   height: 100%;
@@ -254,7 +254,7 @@ Label
 }
 
 .pwd {
-  height: 6px;
+  height: 7px;
   flex: 1;
   visibility: hidden;
 }
@@ -275,16 +275,14 @@ Label
   visibility: visible;
 }
 .logo {
-  height: auto;
+  height: 100px;
   width: 200px;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 
 }
-
 .btn {
   border-radius: 7px;
 }
@@ -292,10 +290,12 @@ Label
   margin-left: 450px;
 }
 #loginbtn {
-  margin-left: 20em;
+  margin-left: 27em;
+   margin-top: 1.5rem;
+
 }
 #registerbtn {
-  margin-left: 15em;
+  margin-left: 22em;
 }
 .row {
   margin-bottom: 0rem;
