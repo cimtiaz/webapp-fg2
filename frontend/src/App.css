@@ -286,9 +286,6 @@ $blue_theme: #70a1ff;
 #uploadbtn {
   margin-left: 450px;
 }
-#loginbtn {
-  margin-left: 20em;
-}
 #registerbtn {
   margin-left: 15em;
 }
@@ -305,4 +302,10 @@ $blue_theme: #70a1ff;
   margin-top: 5rem;
   width: 50rem;
   text-align: justify;
+}
+ul {
+  margin: 0 3rem;
+}
+li {
+  padding: 0 1.5rem 0 1.5rem;
 }

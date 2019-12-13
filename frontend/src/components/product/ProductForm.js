@@ -41,6 +41,7 @@ function ProductForm({ onSubmit }) {
             />
           </div>
 
+
           <div className="form-group">
             <input
               type="text"

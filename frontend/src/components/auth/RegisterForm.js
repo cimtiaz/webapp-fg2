@@ -64,8 +64,7 @@ function RegisterForm({ onSubmit }) {
 
           <div className="form-group">
             <button
-              className="btn btn-success"
-              id="registerbtn"
+              className="btn btn-success float-right"
               onClick={e => onSubmit({ name, email, password, address, phone })}
             >
               Create account

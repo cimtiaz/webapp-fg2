@@ -5,8 +5,8 @@ import ReactDOM from "react-dom";
 function Navbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-warning">
-      <a class="navbar-brand" href="/About">
-        TaB
+      <a className="navbar-brand" href="/About">
+        TT
       </a>
       <button
         className="navbar-toggler"
@@ -20,16 +20,16 @@ function Navbar({ onLogout }) {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="navbarColor01">
+      <div className="collapse navbar-collapse navbar-padding">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item">
             <Link to="/about" className="nav-link">
               About
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/buyer" className="nav-link">
-              Buyer
+          <li className="nav-item nav-list">
+            <Link to="/seller" className="nav-link">
+              Seller
             </Link>
           </li>
           <li className="nav-item">

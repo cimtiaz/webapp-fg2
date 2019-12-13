@@ -3,47 +3,29 @@ import { Link } from "react-router-dom";
 //import Confirmation from './components/confirmation/Confirmation';
 
 function BuyerForm({ onSubmit }) {
-  const [productName, setProductName] = useState("");
+  const [transaction, setTransaction] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [duration, setDuration] = useState("");
   return (
     <div className="card row mt-6">
       <div className="card-body">
-        <h4 className="card-title">Product</h4>
+        <h4 className="card-title">Enter Transaction ID</h4>
         <div>
           <div className="form-group">
             <input
               type="text"
               className="form-control"
-              value={productName}
-              onChange={e => setProductName(e.target.value)}
-              placeholder="Product Name"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              value={description}
-              onChange={e => setDescription(e.target.value)}
-              className="form-control"
-              placeholder="Product Id"
+              value={transaction}
+              onChange={e => setTransaction(e.target.value)}
+              placeholder="Transaction ID"
             />
           </div>
 
           <div className="form-group">
             <Link to="/confirmation">
-              <button className="btn btn-success">Approve</button>
+              <button className="btn btn-success">Next</button>
             </Link>
-
-            <button
-              className="btn btn-success  float-right"
-              onClick={e =>
-                onSubmit({ productName, description, price, duration })
-              }
-            >
-              Reject
-            </button>
           </div>
         </div>
       </div>
