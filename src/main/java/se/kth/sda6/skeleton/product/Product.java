@@ -25,20 +25,31 @@ public class Product {
         @Column(name = "duration")
         private String duration;
 
+        @ManyToOne
+       // @PrimaryKeyJoinColumn(name="user_id")
+        private User user;
 
-    // Hibernate needs a default constructor to function
+        // Hibernate needs a default constructor to function
         public Product() {}
 
         public Product(@NotEmpty(message = "Please provide an Product Name") String productName, String description,
-                       String price, String duration) {
+                       String price, String duration,User user) {
             this.productName = productName;
             this.description = description;
             this.price = price;
             this.duration = duration;
-
+            this.user =user;
         }
 
-        public Long getId() {
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Long getId() {
             return id;
         }
 

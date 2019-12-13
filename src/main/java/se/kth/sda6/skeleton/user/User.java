@@ -8,6 +8,7 @@ import se.kth.sda6.skeleton.transaction.Transaction;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId")
+    @Column(name = "user_id")
     private Long userId;
 
     @Email(message = "Invalid email address! Please provide a valid email address")
@@ -40,10 +41,11 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private Set<Transaction> transactions;
+  // @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+  // @JoinColumn(name="userId" )
+   // private Set<Transaction> transactions;
 
+    /*
     public Set<Product> getProducts() {
         return products;
     }
@@ -51,10 +53,12 @@ public class User {
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
+    */
 
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private Set<Product> products;
+
+
+    @OneToMany(mappedBy ="user",cascade=CascadeType.ALL)
+    private Set<Product> products = new HashSet<>();
 
     // Hibernate needs a default constructor to function
     public User() {}

@@ -24,6 +24,7 @@ public class ProductController {
 
         @Autowired
        private ProductService productService;
+        @Autowired
         private UserService userService;
     /*        @GetMapping("")
            public List<Product> getAllPosts(){
@@ -55,6 +56,17 @@ public class ProductController {
 
       @PostMapping("")
        public Product create(@RequestBody Product newProduct) {
+          Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+          if (!(authentication instanceof AnonymousAuthenticationToken)) {
+              // Find email of seller who is adding product from authorization token
+              String email = authentication.getName();
+              User user = userService.findUserByEmail (email);
+              // To set foreign key of user (Seller) in product table
+              newProduct.setUser(user);
+          }
+          else {
+              throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+          }
               return productService.create(newProduct);
 
       }
