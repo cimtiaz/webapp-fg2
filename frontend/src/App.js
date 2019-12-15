@@ -3,17 +3,23 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Import custom styles for our application
 import "./App.css";
+
+// Import pages
 import Auth from "./services/Auth";
 import Navbar from "./components/layout/Navbar";
-// Import pages
+import Navbarhome from "./components/layout/Navbarhome";
+import Footer from "./components/layout/Footer";
 import LoginPage from "./components/auth/LoginPage";
-import HomePage from "./components/home/HomePage";
+import Home from "./components/about/Home";
+import Contactus from "./components/about/Contactus";
 import About from "./components/about/About";
 import Buyer from "./components/buyer/Buyer";
 import Confirmation from "./components/confirmation/Confirmation";
 import SellerPage from "./components/seller/SellerPage";
 import UploadForm from "./components/seller/UploadForm";
 import Transaction from "./components/transactions/ListOfTransactions";
+import Faq from "./components/about/Faq";
+import OurTeam from "./components/about/OurTeam";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -42,11 +48,33 @@ function App() {
             <Transaction />
           </Route>
         </Switch>
+        <Footer onLogout={() => Auth.logout()} />
       </div>
     </Router>
   );
+  const notLoggedInRouter = (
+    <Router>
+      <Navbarhome />
+      <div className="container mt-5">
+        <Switch>
+          <Route path="/confirmation" component={Confirmation} />
+          <Route path="/about">
+            <Home />
+            <LoginPage />
+            <Faq />
+            <OurTeam />
+            <Contactus />
+          </Route>
 
-  return loggedIn ? loggedInRouter : <LoginPage />;
+          <Route path="/about">
+            <Contactus />
+          </Route>
+        </Switch>
+        <Footer onLogout={() => Auth.logout()} />
+      </div>
+    </Router>
+  );
+  return loggedIn ? loggedInRouter : notLoggedInRouter;
 }
 
 export default App;

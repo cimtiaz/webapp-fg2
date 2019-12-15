@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
 
 function Navbar({ onLogout }) {
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-warning">
+    <nav className="navbar navbar-expand-sm navbar-light navbar-custom ">
       <a className="navbar-brand" href="/About">
-        TT
+        <img
+          src="home/images/logo.png"
+          alt=""
+          height="40"
+          width="40"
+          class="Nav-logo"
+        />
       </a>
       <button
         className="navbar-toggler"
