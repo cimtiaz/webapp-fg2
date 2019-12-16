@@ -32,10 +32,10 @@ class LoginPage extends Component {
             </div>
             <div className="col-md-12" id="loginform">
               <div className="row">
-                <div className="col-6 strong-shadow">
+                <div className="col-6 mt-5 strong-shadow">
                   <LoginForm onSubmit={this.login} />
                 </div>
-                <div className="col-6">
+                <div className="col-6 mt-5">
                   <RegisterForm onSubmit={this.register} />
                 </div>
               </div>
