@@ -20,6 +20,8 @@ import UploadForm from "./components/product/UploadForm";
 import Transaction from "./components/transactions/ListOfTransactions";
 import Faq from "./components/about/Faq";
 import OurTeam from "./components/about/OurTeam";
+import UserForm from "./components/user/UserForm";
+import BankForm from "./components/bank/BankForm";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -42,6 +44,14 @@ function App() {
           <Route path="/product">
             <ProductPage />
             <UploadForm />
+          </Route>
+
+          <Route path="/user">
+            <UserForm />
+          </Route>
+
+          <Route path="/bank">
+            <BankForm />
           </Route>
 
           <Route path="/transactions">

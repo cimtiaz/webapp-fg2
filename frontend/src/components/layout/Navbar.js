@@ -68,9 +68,8 @@ class Navbar extends Component {
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My profile</a>
                   <div className="dropdown-menu">
-                    <a className="dropdown-item font-weight-bold" href="#">{this.state.user.name}</a>
-                    <a className="dropdown-item" href="#">Change Password</a>
-                    <a className="dropdown-item" href="#">Add Bank Account</a>
+                    <a className="dropdown-item" href="/user">Manage Details</a>
+                    <a className="dropdown-item" href="/bank">Add Bank Account</a>
                     <div className="dropdown-divider"></div>
                     <a className="dropdown-item" href="#" onClick={this.props.onLogout}>Logout</a>
                   </div>
