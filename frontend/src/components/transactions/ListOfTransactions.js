@@ -1,30 +1,23 @@
-import React from "react";
+import React, {Component} from "react";
+import ProductApi from "./../../api/ProductApi";
+import UserApi from "./../../api/UserApi";
+
 class Transactions extends React.Component {
   state = {
-    transactionList: [
-      {
-        ID: 1,
-        Name: "Robin",
+        products : [],
+        user : ""
+        };
 
-        Description: "Samsung mobile",
-        Status: "In stock"
-      },
-      {
-        ID: 2,
-        Name: "Dave",
+  componentDidMount() {
+      UserApi.getCurrrentUser()
+        .then(({data}) => this.setState({user: data}))
+        .catch(err => console.error(err));
 
-        Description: "Laptop",
-        Status: "Delivered"
-      },
-      {
-        ID: 3,
-        Name: "Dsdaave",
+      ProductApi.getAllProducts()
+        .then(({data}) => this.setState({products: data}))
+        .catch(err => console.error(err));
+  }
 
-        Description: "A pair of high heel shoes",
-        Status: "Delivered"
-      }
-    ]
-  };
   render() {
     return (
       <table class="table table-hover">
@@ -32,22 +25,25 @@ class Transactions extends React.Component {
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-
             <th scope="col">Description</th>
-            <th scope="col">Status</th>
+            <th scope="col">Price</th>
+            <th scope="col">Duration</th>
+            <th scope="col">User Name</th>
           </tr>
         </thead>
         <tbody>
-          {this.state.transactionList.map(item => (
-            <tr>
-              <td>{item.ID}</td>
-              <td>{item.Name}</td>
-
-              <td>{item.Description}</td>
-              <td>{item.Status}</td>
-            </tr>
-          ))}
-        </tbody>
+           {this.state.products.filter(p => (p.user.userId === this.state.user.userId))
+                .map(p => (
+                   <tr>
+                     <td>{p.id}</td>
+                     <td>{p.productName}</td>
+                     <td>{p.description}</td>
+                     <td>{p.price}</td>
+                     <td>{p.duration}</td>
+                     <td>{p.user.name}</td>
+                   </tr>)
+            )}
+         </tbody>
       </table>
     );
   }
