@@ -22,20 +22,21 @@ public class ProductController {
      */
 
 
-        @Autowired
-       private ProductService productService;
-        @Autowired
-        private UserService userService;
-    /*        @GetMapping("")
-           public List<Product> getAllPosts(){
-               return productService.getAll();
-           }
-    */
-        @GetMapping("/{id}")
-        public Product getByID(@PathVariable Long id){
-            return productService.getByID(id)
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        }
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("")
+    public List<Product> getAllPosts(){
+        return productService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product getByID(@PathVariable Long id){
+        return productService.getByID(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
 
 
       /*  public ResponseEntity<Product> create(@RequestBody Product product)
@@ -54,31 +55,31 @@ public class ProductController {
                 throw new ResponseStatusException(HttpStatus.FORBIDDEN); // throw unauthorized error
         }*/
 
-      @PostMapping("")
-       public Product create(@RequestBody Product newProduct) {
-          Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-          if (!(authentication instanceof AnonymousAuthenticationToken)) {
-              // Find email of seller who is adding product from authorization token
-              String email = authentication.getName();
-              User user = userService.findUserByEmail (email);
-              // To set foreign key of user (Seller) in product table
-              newProduct.setUser(user);
-          }
-          else {
-              throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-          }
-              return productService.create(newProduct);
-
-      }
-        @PutMapping ("")
-        public Product update(@RequestBody Product updatedProduct){
-            return productService.update(updatedProduct);
+    @PostMapping("")
+    public Product create(@RequestBody Product newProduct) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            // Find email of seller who is adding product from authorization token
+            String email = authentication.getName();
+            User user = userService.findUserByEmail (email);
+            // To set foreign key of user (Seller) in product table
+            newProduct.setUser(user);
         }
-
-        @DeleteMapping("/{id}")
-        public void deleteById(@PathVariable Long id){
-            productService.deleteById(id);
+        else {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
+        return productService.create(newProduct);
 
     }
+    @PutMapping ("")
+    public Product update(@RequestBody Product updatedProduct){
+        return productService.update(updatedProduct);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id){
+        productService.deleteById(id);
+    }
+
+}
 
