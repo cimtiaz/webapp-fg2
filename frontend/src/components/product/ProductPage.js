@@ -13,6 +13,7 @@ class ProductPage extends Component {
     };
   }
 
+
   async createProduct(productData) {
     try {
       const response = await ProductApi.createProduct(productData);
@@ -48,7 +49,12 @@ class ProductPage extends Component {
      });
     }
 
+    printName (p) {
+        return <h1>{p.productName}</h1>
+    }
+
   render() {
+
     return (
       <div className="wrapper">
         <div className="container">
@@ -60,7 +66,11 @@ class ProductPage extends Component {
                     onSubmit={productData => this.createSellerAndTransaction(productData)}
                   />
                   <br />
+
+
+
                   <form onSubmit={this._handleSubmit}></form>
+
                 </div>
               </div>
             </div>

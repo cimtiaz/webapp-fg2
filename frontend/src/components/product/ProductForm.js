@@ -7,7 +7,7 @@ function ProductForm({ onSubmit }) {
   const [duration, setDuration] = useState("");
 
   return (
-    <div className="card">
+    <div className="card mt-0">
       <div className="card-body">
         <h4 className="card-title">Details</h4>
         <div>
