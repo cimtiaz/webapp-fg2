@@ -57,7 +57,6 @@ function App() {
       <Navbarhome />
       <div className="container mt-5">
         <Switch>
-          <Route path="/confirmation" component={Confirmation} />
           <Route path="/about">
             <Home />
             <LoginPage />
@@ -65,8 +64,11 @@ function App() {
             <OurTeam />
             <Contactus />
           </Route>
-
-          <Route path="/about">
+          <Route path="/">
+            <Home />
+            <LoginPage />
+            <Faq />
+            <OurTeam />
             <Contactus />
           </Route>
         </Switch>

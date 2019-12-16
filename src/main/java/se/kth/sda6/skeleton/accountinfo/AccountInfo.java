@@ -40,7 +40,7 @@ public class AccountInfo {
     }
 
     public AccountInfo(String bankAccountNumber, User user, String bankName,
-                              String phoneNumber, String iBanNumber) {
+                       String phoneNumber, String iBanNumber) {
         this.bankAccountNumber = bankAccountNumber;
         this.user = user;
         this.bankName = bankName;

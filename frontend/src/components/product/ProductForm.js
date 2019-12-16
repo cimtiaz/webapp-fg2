@@ -1,69 +1,102 @@
-import React, { useState } from "react";
+import React from "react";
 
-function ProductForm({ onSubmit }) {
-  const [productName, setProductName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [duration, setDuration] = useState("");
+class ProductForm extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Details</h4>
-        <div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              value={productName}
-              onChange={e => setProductName(e.target.value)}
-              placeholder="Product Name"
-            />
-          </div>
+    this.state = {
+        productName : "",
+        description : "",
+        price : "",
+        duration : "",
+        message : ""
+    }
+  }
 
-          <div className="form-group">
-            <input
-              type="text"
-              value={description}
-              onChange={e => setDescription(e.target.value)}
-              className="form-control"
-              placeholder="Description"
-            />
-          </div>
+    handleSubmit () {
+      // Invoke the passed in event callback
+      this.props.onSubmit(
+        {
+           productName: this.state.productName,
+           description: this.state.description,
+           price: this.state.price,
+           duration: this.state.duration
+        });
 
-          <div className="form-group">
-            <input
-              type="text"
-              value={price}
-              onChange={e => setPrice(e.target.value)}
-              className="form-control"
-              placeholder="Price"
-            />
-          </div>
+      // Clear the input field
+      this.setState({productName: ""});
+      this.setState({description: ""});
+      this.setState({price: ""});
+      this.setState({duration: ""});
+
+      this.setState({message: "The record is saved"});
 
 
-          <div className="form-group">
-            <input
-              type="text"
-              value={duration}
-              onChange={e => setDuration(e.target.value)}
-              className="form-control"
-              placeholder="Duration to hold the product"
-            />
-            <div className="form-group"></div>
-            <button
-              className="btn btn-success"
-              onClick={e =>
-                onSubmit({ productName, description, price, duration })
-              }
-            >
-              Start Transaction
-            </button>
+    }
+
+
+  render () {
+      return (
+        <div className="card mt-0">
+          <div className="card-body">
+            <h4 className="card-title">Details</h4>
+            <div>
+              <div className="result">{ this.state.message }</div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.productName}
+                  onChange={e => this.setState({productName : e.target.value})}
+                  placeholder="Product Name"
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="text"
+                  value={this.state.description}
+                  onChange={e => this.setState({description : e.target.value})}
+                  className="form-control"
+                  placeholder="Description"
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="text"
+                  value={this.state.price}
+                  onChange={e => this.setState({price : e.target.value})}
+                  className="form-control"
+                  placeholder="Price"
+                />
+              </div>
+
+
+              <div className="form-group">
+                <input
+                  type="text"
+                  value={this.state.duration}
+                  onChange={e => this.setState({duration : e.target.value})}
+                  className="form-control"
+                  placeholder="Duration to hold the product"
+                />
+                <div className="form-group"></div>
+
+                <button
+                  className="btn btn-success"
+                  onClick={e =>
+                    this.handleSubmit()
+                  }
+                >
+                  Start Transaction
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+      );
+  }
 }
 
 export default ProductForm;
