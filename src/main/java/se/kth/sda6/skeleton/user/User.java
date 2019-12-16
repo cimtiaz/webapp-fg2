@@ -25,7 +25,7 @@ public class User {
     @Column(name = "email", unique = true)
     private String email;
 
-    @Length(min = 5, max=100, message = "Password length most be between 5-100 characters")
+    @Length(min = 3, max=100, message = "Password length most be between 5-100 characters")
     @Column(name = "password")
     private String password;
 
@@ -33,7 +33,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Length(min = 10, max=10, message = "Phone no should be 10 digit long.")
+    @Length(min = 3, max=15, message = "Phone no should be 10 digit long.")
     @NotEmpty(message = "Please provide a valid phone number")
     @Column(name = "phone")
     private String phone;
@@ -41,9 +41,9 @@ public class User {
     @Column(name = "address")
     private String address;
 
-  // @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
-  // @JoinColumn(name="userId" )
-   // private Set<Transaction> transactions;
+    // @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+    // @JoinColumn(name="userId" )
+    // private Set<Transaction> transactions;
 
     /*
     public Set<Product> getProducts() {
@@ -65,7 +65,7 @@ public class User {
 
     public User(@Email(message = "Invalid email address! Please provide a valid email address")
                 @NotEmpty(message = "Please provide an email address") String email, @Length(min = 5, max = 100,
-                message = "Password length must be between 5-100 characters") String password,
+            message = "Password length must be between 5-100 characters") String password,
                 @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String name,
                 @Length(min = 3, max = 300, message = "Address must be between 3-300 characters") String address,
                 @Length(max = 30, message = "Name must be between 3-100 characters") String phone) {
